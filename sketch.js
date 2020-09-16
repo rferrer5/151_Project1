@@ -3,9 +3,10 @@ let speed = 5; //speed of the shape
 let circles = []; //array of circles
 let i = 0; //the index of the array
 let colors = []; //color palette
+var c;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  c = createCanvas(windowWidth, windowHeight);
   background(0);
   noStroke();
   ellipseMode(RADIUS);
@@ -60,4 +61,8 @@ class Circle {
     fill(this.coloring);
     ellipse(this.xpos, this.ypos, this.rad, this.rad);
   }
+}
+
+function keyPressed(){
+   save(c, 'keyCanvas.jpg');
 }
